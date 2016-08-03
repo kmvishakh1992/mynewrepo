@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Word Sense Disambiguation</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font.css' %}">
+	<link rel="stylesheet" href="{% static 'css/helo.css' %}">
+
+
+</head>
+  
+
+<body style="background:#eee;padding-left: 15px;">
+	<div class="page-header">
+            <h1>Word Sense Disambiguation</h1>
+     </div>
+    <!-- <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+   	</div>-->
+
+<form method="POST" action="act"> {% csrf_token %}
+        <div class="content container">
+        <div class="row">
+                <div class="col-md-8">
+		<p><table>
+			<tr>
+				<td>Sentence</td>
+				<td></td>
+				<td>:&nbsp&nbsp&nbsp</td>
+				<td><input type="text" class="form-control js-text" name="sent"  placeholder="Type text here..." value="{{text}}" style="width: 500px;"/>
+			</tr>
+			<tr>
+				<td>Ambiguous Word</td>
+				<td style="color:red;">*</td>
+				<td>:&nbsp&nbsp&nbsp</td>
+				<td><input type="text" class="form-control js-text" name="wsd" value="{{amb	}}" required/>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><input type="submit" name="amb" class="save btn btn-default" value="submit"/>
+			</tr>
+		</table>
+		</form> 
+		</td></div></div></div>
+		        <div class="content container">
+
+<div id="content"></p>
+{{defi}}
+
+</div>
+</div>
+</body>
+</html>
